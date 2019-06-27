@@ -1,0 +1,51 @@
+<div class="photo-nav">
+  <button mat-stroked-button color="primary" class="btn-photo" routerLink="">
+    Back
+  </button>
+
+  <form class="search-header">
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Filter By Title"
+        aria-label="Assignee"
+        matInput
+        [formControl]="myControl"
+        name="myControl.value"
+      />
+    </mat-form-field>
+  </form>
+</div>
+
+<ul class="gallery">
+  <li
+    *ngFor="
+      let picture of photosOfAlbum | filter: myControl.value;
+      let i = index
+    "
+  >
+    <mat-card>
+      <div class="text overlay">
+        <h2 class="title-card">Title: {{ picture.title }}</h2>
+      </div>
+      <img [src]="picture.thumbnailUrl" />
+
+      <button
+        mat-flat-button
+        color="primary"
+        class="picBtn"
+        (click)="openDialog(picture.id)"
+      >
+        View
+      </button>
+      <button
+        mat-flat-button
+        color="warn"
+        class="picBtn"
+        (click)="deletePhotos(picture.id)"
+      >
+        DELETE
+      </button>
+    </mat-card>
+  </li>
+</ul>

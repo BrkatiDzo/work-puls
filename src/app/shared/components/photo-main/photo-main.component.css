@@ -1,0 +1,124 @@
+.gallery {
+  display: grid;
+  grid-gap: 5px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 575.98px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768.98px) and (min-width: 576px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* material override  and style*/
+.mat-card {
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+/* header for photo */
+.photo-nav {
+  display: flex;
+}
+form {
+  margin-left: auto;
+}
+.search-header {
+  width: 300px;
+}
+
+/* pomeri u main */
+.example-full-width {
+  width: 100%;
+}
+
+/* dialog css */
+.img-dialog {
+  width: 100%;
+  height: 400px;
+}
+
+#mat-dialog-1 {
+  padding: 0 !important;
+}
+.test {
+  padding: 0 !important;
+}
+
+/* css za sliku */
+
+.gallery-item {
+  width: 32%;
+  padding-bottom: 18%;
+  margin-bottom: 2%;
+
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: 0.5s ease;
+  background: rgba(0, 0, 0, 0.1);
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay:hover {
+  opacity: 0;
+}
+.title-card {
+  display: inline-block;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+button .overlay {
+  opacity: 1;
+}
+
+.picBtn {
+  width: 50%;
+}

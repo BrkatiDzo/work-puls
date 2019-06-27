@@ -1,0 +1,30 @@
+<div class="photo-nav">
+  <form class="search-header">
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Filter By Title"
+        aria-label="Assignee"
+        matInput
+        [formControl]="myControl"
+        name="myControl.value"
+      />
+    </mat-form-field>
+  </form>
+</div>
+
+<ul class="gallery-flex">
+  <li
+    *ngFor="let user of mainArr | filter: myControl.value; let i = index"
+    class="gallery-item"
+    (click)="getAlbumInfo(user.id)"
+  >
+    <mat-card class="overlay">
+      <div class="text">
+        <h2 class="title-card">Title: {{ user.title }}</h2>
+        <br />
+        <h4>Author: {{ user.user }}</h4>
+      </div>
+    </mat-card>
+  </li>
+</ul>
